@@ -6,5 +6,8 @@ namespace SchoolPractice
 {
     class Course
     {
+        List<Student> Roster { get; set; }
+
+        
     }
 }
