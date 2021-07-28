@@ -6,8 +6,16 @@ namespace SchoolPractice
 {
     class Course
     {
-        List<Student> Roster { get; set; }
+        private List<Student> StudentRoster { get; set; }
+        private List<Teacher> ProfessorRoster { get; set; }
+        private double AverageGrade { get; set; }
 
+        public Course(List<Student> studentRoster, List<Teacher> professorRoster, double averageGrade)
+        {
+            StudentRoster = studentRoster;
+            ProfessorRoster = professorRoster;
+            AverageGrade = averageGrade;
+        }
         
     }
 }
