@@ -32,13 +32,19 @@ namespace SchoolPractice
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate properties: NumberOfCredits, Gpa
+            double currentTotalQualityScore = this.Gpa * this.NumberOfCredits;
+            double qualityScore = grade * courseCredits;
+            double totalQualityScore = currentTotalQualityScore + qualityScore;
+            double totalNumberOfCredits = this.NumberOfCredits + courseCredits;
+            double newGpa = (totalQualityScore / (totalNumberOfCredits));
+            this.Gpa = newGpa;
         }
 
         //TODO: Complete the GetGradeLevel method here:
         public string GetGradeLevel(int credits)
         {
             // Determine the grade level of the student based on NumberOfCredits
-            //Student newStudent = new Student();
+            
 
             if (this.NumberOfCredits <= 29)
             {
@@ -50,7 +56,6 @@ namespace SchoolPractice
             {
                 return "Junior";
             }
-
             return "Senior";
         }
 
