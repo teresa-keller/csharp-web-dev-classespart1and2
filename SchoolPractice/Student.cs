@@ -35,8 +35,9 @@ namespace SchoolPractice
             double currentTotalQualityScore = this.Gpa * this.NumberOfCredits;
             double qualityScore = grade * courseCredits;
             double totalQualityScore = currentTotalQualityScore + qualityScore;
-            double totalNumberOfCredits = this.NumberOfCredits + courseCredits;
+            int totalNumberOfCredits = this.NumberOfCredits + courseCredits;
             double newGpa = (totalQualityScore / (totalNumberOfCredits));
+            this.NumberOfCredits = totalNumberOfCredits;
             this.Gpa = newGpa;
         }
 
@@ -57,6 +58,11 @@ namespace SchoolPractice
                 return "Junior";
             }
             return "Senior";
+        }
+
+        public override string ToString()
+        {
+            return "Student ID: " + this.StudentId + "\nName: " + this.Name + "\nNumber of Credits: " + this.NumberOfCredits + "\nGPA: " + this.Gpa + "\nGrade Level: " + this.GetGradeLevel(this.NumberOfCredits);
         }
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather

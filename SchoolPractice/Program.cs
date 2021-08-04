@@ -20,6 +20,8 @@ namespace SchoolPractice
             Console.WriteLine(otherNewStudent.Gpa);
             otherNewStudent.AddGrade(4, 3.0);
             Console.WriteLine(otherNewStudent.Gpa);
+
+            Console.WriteLine(otherNewStudent.ToString());
         }
     }
 }
