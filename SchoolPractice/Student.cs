@@ -27,6 +27,7 @@ namespace SchoolPractice
             nextStudentId++;
         }
 
+        //public Student() { }
         // TODO: Complete the AddGrade method.
         public void AddGrade(int courseCredits, double grade)
         {
@@ -37,7 +38,20 @@ namespace SchoolPractice
         public string GetGradeLevel(int credits)
         {
             // Determine the grade level of the student based on NumberOfCredits
-            return "grade level tbd";
+            //Student newStudent = new Student();
+
+            if (this.NumberOfCredits <= 29)
+            {
+                return "Freshman";
+            } else if (this.NumberOfCredits >= 30 && this.NumberOfCredits <= 59)
+            {
+                return "Sophomore";
+            } else if (this.NumberOfCredits >= 60 && this.NumberOfCredits <= 89)
+            {
+                return "Junior";
+            }
+
+            return "Senior";
         }
 
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
