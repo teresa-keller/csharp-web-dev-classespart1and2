@@ -65,6 +65,21 @@ namespace SchoolPractice
             return "Student ID: " + this.StudentId + "\nName: " + this.Name + "\nNumber of Credits: " + this.NumberOfCredits + "\nGPA: " + this.Gpa + "\nGrade Level: " + this.GetGradeLevel(this.NumberOfCredits);
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Student student &&
+                   Name == student.Name &&
+                   StudentId == student.StudentId &&
+                   NumberOfCredits == student.NumberOfCredits &&
+                   Gpa == student.Gpa;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Name, StudentId, NumberOfCredits, Gpa);
+        }
+
+
         // TODO: Add your custom 'ToString' method here. Make sure it returns a well-formatted string rather
         //  than just the class fields.
 
